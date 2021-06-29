@@ -16,34 +16,36 @@ project 1 - A Random Quote Generator
 const quotes = [];
 
 quotes = [{
-  quote: "",
-  source:"",
+  quote: "A man's mind, stretched by new ideas, may never return to its original dimensions.",
+  source:"Oliver Wendell Holmes Jr.",
   citation:"",
   year:''
 },
 {
-  quote: "",
-  source:"",
+  quote: "He who opens a school door, closes a prison.",
+  source:"Victor Hugo",
   citation:"",
   year:''
 },
 {
-  quote: "",
-  source:"",
+  quote: "The only person who is educated is the one who has learned how to learn …and change.",
+  source:"Carl Rogers",
   citation:"",
   year:''
 },
 {
-  quote: "",
-  source:"",
-  citation:"",
-  year:''
+  quote: "It is the supreme art of the teacher to awaken joy in creative expression and knowledge.’",
+  source:"Einstein, Albert",
+  citation:"Alice Calaprice, The Ultimate Quotable Einstein, p. 100]",
+  year:'2011'
 },
 {
-  quote: "",
+  quote: `Keep away from people who try to belittle your ambitions. 
+  Small people always do that, but the really great make you feel that you, too, can become great.`,
   source:"",
-  citation:"",
-  year:''
+  citation:`Mark Twain at Your Fingertips”, Edited by Caroline Thomas Harnsberger, 
+  Quote Page 354, Cloud, Inc., Beechhurst Press, Inc., New York. (Verified on paper) `,
+  year:'1948'
 }
 ];
 
