@@ -9,7 +9,44 @@ project 1 - A Random Quote Generator
 
 /*** 
  * `quotes` array 
+ * 
+ * This array will consist of quote objects inside the array.
 ***/
+
+const quotes = [];
+
+quotes = [{
+  quote: "",
+  source:"",
+  citation:"",
+  year:''
+},
+{
+  quote: "",
+  source:"",
+  citation:"",
+  year:''
+},
+{
+  quote: "",
+  source:"",
+  citation:"",
+  year:''
+},
+{
+  quote: "",
+  source:"",
+  citation:"",
+  year:''
+},
+{
+  quote: "",
+  source:"",
+  citation:"",
+  year:''
+}
+];
+
 
 
 
