@@ -13,7 +13,7 @@ project 1 - A Random Quote Generator
  * This array will consist of quote objects inside the array.
 ***/
 
-const quotes = [];
+let quotes = [];
 
 quotes = [{
   quote: "A man's mind, stretched by new ideas, may never return to its original dimensions.",
