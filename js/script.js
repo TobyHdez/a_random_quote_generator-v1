@@ -67,7 +67,6 @@ random_pick = Math.floor(Math.random() * arr.length) + 1; //get the random numbe
 return quotes[random_pick];
 }
 
-
 /***
  * `printQuote` function
 ***/
