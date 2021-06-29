@@ -1,2 +1,3 @@
 # Random Quote Generator
- A random quote generator.
+ 
+ Project #1 in what will hopefully be a series of successful projects!
