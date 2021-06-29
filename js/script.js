@@ -49,9 +49,6 @@ quotes = [{
 }
 ];
 
-
-
-
 /***
  * `getRandomQuote` function
  * 
