@@ -52,6 +52,7 @@ quotes = [{
 
 /***
  * `getRandomQuote` function
+ * 
 ***/
 
 
