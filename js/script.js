@@ -52,8 +52,20 @@ quotes = [{
 /***
  * `getRandomQuote` function
  * 
+ * This function creates a random number, and use that random number to return a random 
+ * quote object from the quotes array.  
+ * 
+ * This function accepts one parameter, an array with objects, and returns a random 
+ * selection from that list of objects.
 ***/
 
+function getRandomQuote (arr) {
+
+let random_pick;
+random_pick = Math.floor(Math.random() * arr.length) + 1; //get the random number
+
+return quotes[random_pick];
+}
 
 
 /***
