@@ -55,8 +55,8 @@ quotes = [{
  * This function creates a random number, and use that random number to return a random 
  * quote object from the quotes array.  
  * 
- * This function accepts one parameter, an array with objects, and returns a random 
- * selection from that list of objects.
+ * This function accepts one parameter, an array with objects, and returns a randomly
+ * selected object from that array of objects.
 ***/
 
 function getRandomQuote (arr) {
@@ -78,24 +78,22 @@ return quotes[random_pick];
 function printQuote (quote_selected)  {
   
   let newQuote = quote_selected;
-  let html = `<p class="quote"> ${quote_selected['quote']} </p> 
-              <p class="quote"> ${quote_selected['source']}`;
+  let html = `<p class="quote"> ${newQuote['name']} </p> 
+              <p class="quote"> ${newQuote['source']}`;
   
-  if ( quote_selected['citation'])  {
-    html += `<span class="citation"> ${quote_selected['citation']} </span>`
+  if ( newQuote['citation'])  {
+    html += `<span class="citation"> ${newQuote['citation']} </span>`
   }
-  if (quote_selected['date'])  {
-    html += `<span class="citation"> ${quote_selected['date']} </span>`
+  if (newQuote['date'])  {
+    html += `<span class="citation"> ${newQuote['date']} </span>`
   }
 
   html += `</p>`;
   return document.getElementById('quote-box').innerHTML = html;
 }
-
-
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-printQuote(getRandomQuote(quotes));
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+printQuote(getRandomQuote(quotes));
