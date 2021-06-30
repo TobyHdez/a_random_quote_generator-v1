@@ -3,14 +3,11 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
  * `quotes` array 
  * 
- * This array will consist of quote objects inside the array.
+ * This array will consist of quote objects inside the array.  It is our data portion.
 ***/
 
 let quotes = [];
@@ -52,7 +49,7 @@ quotes = [{
 /***
  * `getRandomQuote` function
  * 
- * This function creates a random number, and use that random number to return a random 
+ * This function creates a random number, and uses that random number to index a random 
  * quote object from the quotes array.  
  * 
 ***/
@@ -62,13 +59,13 @@ function getRandomQuote () {
   let random_pick;
   random_pick = Math.floor(Math.random() * quotes.length) + 1; //get the random number
 
-return quotes[random_pick];
+return quotes[random_pick];   //apply random number as index and return the random object
 }
 
 /***
  * `printQuote` function
  * 
- * The function displays a new quote each time the user clicks the "Show another quote" button.
+ * The function displays the new quote each time the user clicks the "Show another quote" button.
 ***/
 
 function printQuote()  {
@@ -77,15 +74,15 @@ function printQuote()  {
   let html = `<p class="quote"> ${newQuote['quote']} </p> 
               <p class="quote"> ${newQuote['source']}`;
   
-  if (newQuote['citation'])  {
+  if (newQuote['citation'])  {                                         //if citation exists
     html += `<span class="citation"> ${newQuote['citation']} </span>`
   }
-  if (newQuote['date'])  {
-    html += `<span class="citation"> ${newQuote['date']} </span>`
+  if (newQuote['date'])  {                                             //if date exists
+    html += `<span class="citation"> ${newQuote['date']} </span>` 
   }
 
   html += `</p>`;
-  return document.getElementById('quote-box').innerHTML = html;
+  return document.getElementById('quote-box').innerHTML = html;   //sends final html code to page
 }
 /***
  * click event listener for the print quote button
