@@ -11,6 +11,7 @@ project 1 - A Random Quote Generator
 ***/
 
 let quotes = [];
+let set_timer = setInterval(printQuote, 7000);  // method to automatically generate a new quote every 5 seconds
 
 quotes = [{
   quote: "A man's mind, stretched by new ideas, may never return to its original dimensions.",
@@ -62,7 +63,7 @@ quotes = [{
 function getRandomQuote () {
 
   let random_pick;
-  random_pick = Math.floor(Math.random() * quotes.length) + 1; //get the random number
+  random_pick = Math.floor(Math.random() * quotes.length); //get the random number
 
 return quotes[random_pick];   //apply random number as index and return the random object
 }
@@ -91,6 +92,7 @@ return bgColor;
 
 function printQuote()  {
   
+  clearInterval(set_timer);  //resets the 5 second counter;
   let newQuote = getRandomQuote();
   let html = `<p class="quote"> ${newQuote['quote']} </p> 
               <p class="quote"> ${newQuote['source']}`;
@@ -106,8 +108,10 @@ function printQuote()  {
   }
   html += `</p>`;
   
-  document.body.style.background = random_bg_color();
-  return document.getElementById('quote-box').innerHTML = html;   //sends final html code to page
+  document.body.style.background = random_bg_color();  //trigger a random background color
+  set_timer;   //begins the clock for 5 second wait
+  
+    return document.getElementById('quote-box').innerHTML = html;   //sends final html code to page
 }
 /***
  * click event listener for the print quote button
@@ -117,4 +121,4 @@ function printQuote()  {
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-setInterval(printQuote, 4000);  //will automatically generate a new quote every 4? seconds
+
