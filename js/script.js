@@ -60,7 +60,7 @@ quotes = [{
 function getRandomQuote () {
 
   let random_pick;
-  random_pick = Math.floor(Math.random() * arr.length) + 1; //get the random number
+  random_pick = Math.floor(Math.random() * quotes.length) + 1; //get the random number
 
 return quotes[random_pick];
 }
@@ -74,7 +74,7 @@ return quotes[random_pick];
 function printQuote()  {
   
   let newQuote = getRandomQuote();
-  let html = `<p class="quote"> ${newQuote['name']} </p> 
+  let html = `<p class="quote"> ${newQuote['quote']} </p> 
               <p class="quote"> ${newQuote['source']}`;
   
   if (newQuote['citation'])  {
