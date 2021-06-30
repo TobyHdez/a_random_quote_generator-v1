@@ -55,33 +55,29 @@ quotes = [{
  * This function creates a random number, and use that random number to return a random 
  * quote object from the quotes array.  
  * 
- * This function accepts one parameter, an array with objects, and returns a randomly
- * selected object from that array of objects.
 ***/
 
-function getRandomQuote (arr) {
+function getRandomQuote () {
 
   let random_pick;
   random_pick = Math.floor(Math.random() * arr.length) + 1; //get the random number
 
-return arr[random_pick];
+return quotes[random_pick];
 }
 
 /***
  * `printQuote` function
  * 
  * The function displays a new quote each time the user clicks the "Show another quote" button.
- * 
- * The function accepts one parameter, an object that contains quote properties and values.
 ***/
 
-function printQuote (quote_selected)  {
+function printQuote()  {
   
-  let newQuote = quote_selected;
+  let newQuote = getRandomQuote();
   let html = `<p class="quote"> ${newQuote['name']} </p> 
               <p class="quote"> ${newQuote['source']}`;
   
-  if ( newQuote['citation'])  {
+  if (newQuote['citation'])  {
     html += `<span class="citation"> ${newQuote['citation']} </span>`
   }
   if (newQuote['date'])  {
