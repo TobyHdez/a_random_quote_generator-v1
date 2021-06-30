@@ -96,7 +96,7 @@ function printQuote()  {
   clearInterval(set_timer);  //resets the 5 second counter;
   let newQuote = getRandomQuote();
 
-  while (newQuote === old_quote)  {  //check to make sure not to repeat quotes
+  while (newQuote == old_quote)  {  //check to make sure not to repeat quotes
     printQuote();
   } 
 
