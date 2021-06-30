@@ -64,7 +64,7 @@ function getRandomQuote (arr) {
   let random_pick;
   random_pick = Math.floor(Math.random() * arr.length) + 1; //get the random number
 
-return quotes[random_pick];
+return arr[random_pick];
 }
 
 /***
