@@ -16,25 +16,29 @@ quotes = [{
   quote: "A man's mind, stretched by new ideas, may never return to its original dimensions.",
   source:"Oliver Wendell Holmes Jr.",
   citation:"",
-  year:''
+  year:'',
+  tag:'education'
 },
 {
   quote: "He who opens a school door, closes a prison.",
   source:"Victor Hugo",
   citation:"",
-  year:''
+  year:'',
+  tag:'education'
 },
 {
   quote: "The only person who is educated is the one who has learned how to learn …and change.",
   source:"Carl Rogers",
   citation:"",
-  year:''
+  year:'',
+  tag:'education'
 },
 {
   quote: "It is the supreme art of the teacher to awaken joy in creative expression and knowledge.’",
   source:"Einstein, Albert",
-  citation:"Alice Calaprice, The Ultimate Quotable Einstein, p. 100]",
-  year:'2011'
+  citation:"Alice Calaprice, The Ultimate Quotable Einstein, p. 100",
+  year:'2011',
+  tag:'education'
 },
 {
   quote: `Keep away from people who try to belittle your ambitions. 
@@ -42,7 +46,8 @@ quotes = [{
   source:"",
   citation:`Mark Twain at Your Fingertips”, Edited by Caroline Thomas Harnsberger, 
   Quote Page 354, Cloud, Inc., Beechhurst Press, Inc., New York. (Verified on paper) `,
-  year:'1948'
+  year:'1948',
+  tag:'education'
 }
 ];
 
@@ -68,6 +73,22 @@ return quotes[random_pick];   //apply random number as index and return the rand
  * The function displays the new quote each time the user clicks the "Show another quote" button.
 ***/
 
+/***
+ * `random_bg_color` function
+ * 
+ * The function gives me a random color to insert into the page after new quote
+ * 
+ * Code taken from https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
+***/
+
+function random_bg_color() {
+  var x = Math.floor(Math.random() * 256);
+  var y = Math.floor(Math.random() * 256);
+  var z = Math.floor(Math.random() * 256);
+  var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+return bgColor;
+}
+
 function printQuote()  {
   
   let newQuote = getRandomQuote();
@@ -78,10 +99,14 @@ function printQuote()  {
     html += `<span class="citation"> ${newQuote['citation']} </span>`
   }
   if (newQuote['date'])  {                                             //if date exists
-    html += `<span class="citation"> ${newQuote['date']} </span>` 
+    html += `<span class="date"> ${newQuote['date']} </span>` 
   }
-
+  if (newQuote['tag'])  {                                         //tagged
+    html += `<span class="tag"> tag> ${newQuote['tag']} </span>`
+  }
   html += `</p>`;
+  
+  document.body.style.background = random_bg_color();
   return document.getElementById('quote-box').innerHTML = html;   //sends final html code to page
 }
 /***
