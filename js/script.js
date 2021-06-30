@@ -61,21 +61,41 @@ quotes = [{
 
 function getRandomQuote (arr) {
 
-let random_pick;
-random_pick = Math.floor(Math.random() * arr.length) + 1; //get the random number
+  let random_pick;
+  random_pick = Math.floor(Math.random() * arr.length) + 1; //get the random number
 
 return quotes[random_pick];
 }
 
 /***
  * `printQuote` function
+ * 
+ * The function displays a new quote each time the user clicks the "Show another quote" button.
+ * 
+ * The function accepts one parameter, an object that contains quote properties and values.
 ***/
 
+function printQuote (quote_selected)  {
+  
+  let newQuote = quote_selected;
+  let html = `<p class="quote"> ${quote_selected['quote']} </p> 
+              <p class="quote"> ${quote_selected['source']}`;
+  
+  if ( quote_selected['citation'])  {
+    html += `<span class="citation"> ${quote_selected['citation']} </span>`
+  }
+  if (quote_selected['date'])  {
+    html += `<span class="citation"> ${quote_selected['date']} </span>`
+  }
+
+  html += `</p>`;
+  return document.getElementById('quote-box').innerHTML = html;
+}
 
 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-
+printQuote(getRandomQuote(quotes));
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
