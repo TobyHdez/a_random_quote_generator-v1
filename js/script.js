@@ -11,7 +11,8 @@ project 1 - A Random Quote Generator
 ***/
 
 let quotes = [];
-let set_timer = setInterval(printQuote, 7000);  // method to automatically generate a new quote every 5 seconds
+let set_timer = setInterval(printQuote, 4000);  // method to automatically generate a new quote every 5 seconds
+let old_quote = '';
 
 quotes = [{
   quote: "A man's mind, stretched by new ideas, may never return to its original dimensions.",
@@ -94,6 +95,11 @@ function printQuote()  {
   
   clearInterval(set_timer);  //resets the 5 second counter;
   let newQuote = getRandomQuote();
+
+  while (newQuote === old_quote)  {  //check to make sure not to repeat quotes
+    printQuote();
+  } 
+
   let html = `<p class="quote"> ${newQuote['quote']} </p> 
               <p class="quote"> ${newQuote['source']}`;
   
@@ -110,7 +116,8 @@ function printQuote()  {
   
   document.body.style.background = random_bg_color();  //trigger a random background color
   set_timer;   //begins the clock for 5 second wait
-  
+  old_quote = newQuote;  //will be used to check if quotes repeat when called again
+
     return document.getElementById('quote-box').innerHTML = html;   //sends final html code to page
 }
 /***
@@ -118,7 +125,4 @@ function printQuote()  {
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
-
-
